@@ -5,7 +5,9 @@
 This module includes various customizable **React-Native** calendar components.
 
 The package is both **Android** and **iOS** compatible.
-forked from wix/react-native-calendars
+
+forked from wix/react-native-calendars.
+
 Fix Agenda cannot scroll up
 ## Try it out
 
