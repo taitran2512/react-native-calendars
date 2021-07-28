@@ -7,7 +7,7 @@ import {FlatList, ActivityIndicator, View} from 'react-native';
 
 import {extractComponentProps} from '../../component-updater';
 import dateutils from '../../dateutils';
-import {toMarkingFormat} from '../../interface';
+import {parseDate, toMarkingFormat} from '../../interface';
 import styleConstructor from './style';
 import Reservation from './reservation';
 
@@ -128,7 +128,40 @@ class ReservationList extends Component {
       return false;
     }
   }
-
+_onRefresh = () => {
+  let h = 0;
+  let scrollPosition = 0;
+  const selectedDay = this.props.selectedDay.clone();
+  const iterator = parseDate(this.props.selectedDay.clone().getTime()-3600*24*30*1000);
+  let reservations = [];
+  for (let i = 0; i < 30; i++) {
+    const res = this.getReservationsForDay(iterator, this.props);
+    if (res) {
+      reservations = reservations.concat(res);
+    }
+    iterator.addDays(1);
+  }
+  scrollPosition = reservations.length;
+  for (let i = 10; i < 30; i++) {
+    const res = this.getReservationsForDay(iterator, this.props);
+    if (res) {
+      reservations = reservations.concat(res);
+    }
+    iterator.addDays(1);
+  }
+  this.setState({
+    reservations
+  }, () => {
+    setTimeout(() => {
+      let h = 0;
+      for (let i = 0; i < scrollPosition; i++) {
+        h += this.heights[i] || 0;
+      }
+      this.list.scrollToOffset({offset: h, animated: false});
+      this.props.onDayChange(selectedDay, false);
+    }, 100);
+  });
+}
   getReservations(props) {
     const {selectedDay, showOnlySelectedDayItems} = props;
     if (!props.reservations || !selectedDay) {
@@ -247,7 +280,7 @@ class ReservationList extends Component {
         onScroll={this.onScroll}
         refreshControl={this.props.refreshControl}
         refreshing={this.props.refreshing}
-        onRefresh={this.props.onRefresh}
+        onRefresh={this._onRefresh}
         onScrollBeginDrag={this.props.onScrollBeginDrag}
         onScrollEndDrag={this.props.onScrollEndDrag}
         onMomentumScrollBegin={this.props.onMomentumScrollBegin}
