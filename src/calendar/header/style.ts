@@ -7,12 +7,8 @@ export default function (theme: Theme = {}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     header: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingLeft: 10,
-      paddingRight: 10,
-      marginTop: 6,
-      alignItems: 'center'
+       height: 0,
+       opacity: 0,
     },
     headerContainer: {
       flexDirection: 'row'

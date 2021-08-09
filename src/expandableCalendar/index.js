@@ -24,7 +24,7 @@ const POSITIONS = {
 };
 const SPEED = 20;
 const BOUNCINESS = 6;
-const CLOSED_HEIGHT = 120; // header + 1 week
+const CLOSED_HEIGHT = 46; // header + 1 week
 const WEEK_HEIGHT = 46;
 const KNOB_CONTAINER_HEIGHT = 20;
 const DAY_NAMES_PADDING = 24;
@@ -96,14 +96,14 @@ class ExpandableCalendar extends Component {
     this.visibleMonth = this.getMonth(this.props.context.date);
     this.initialDate = props.context.date; // should be set only once!!!
     this.headerStyleOverride = {
-      'stylesheet.calendar.header': {
-        week: {
-          marginTop: 7,
-          marginBottom: -4, // reduce space between dayNames and first line of dates
-          flexDirection: 'row',
-          justifyContent: 'space-around'
-        }
-      }
+      // 'stylesheet.calendar.header': {
+      //   week: {
+      //     marginTop: 7,
+      //     marginBottom: -4, // reduce space between dayNames and first line of dates
+      //     flexDirection: 'row',
+      //     justifyContent: 'space-around'
+      //   }
+      // }
     };
 
     this.state = {
