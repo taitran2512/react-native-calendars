@@ -171,16 +171,20 @@ class AgendaList extends Component {
     this.sectionHeight = nativeEvent.layout.height;
   };
 
-  renderSectionHeader = ({section: {title}}) => {
-    const {renderSectionHeader, sectionStyle} = this.props;
+  renderSectionHeader = ({section}) => {
+    const {renderSectionHeader, sectionStyle,hideHeaderWhenDataEmty} = this.props;
 
     if (renderSectionHeader) {
       return renderSectionHeader(title);
     }
 
-    return (
+	  if (_.isEmpty(section.data)&&hideHeaderWhenDataEmty) {
+		 return null
+	  }
+	  
+	   return (
       <Text allowFontScaling={false} style={[this.style.sectionText, sectionStyle]} onLayout={this.onHeaderLayout}>
-        {this.getSectionTitle(title)}
+        {this.getSectionTitle(section.title)}
       </Text>
     );
   };
