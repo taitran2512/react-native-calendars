@@ -8,7 +8,7 @@ import dateutils from '../../dateutils';
 import {RESERVATION_DATE} from '../../testIDs';
 import styleConstructor from './style';
 
-class Reservation extends Component {
+class Reservation extends React.PureComponent {
   static displayName = 'IGNORE';
 
   static propTypes = {

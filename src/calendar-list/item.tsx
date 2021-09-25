@@ -24,7 +24,7 @@ type CalendarListItemState = {
   hideExtraDays: boolean;
 }
 
-class CalendarListItem extends Component<CalendarListItemProps, CalendarListItemState> {
+class CalendarListItem extends React.PureComponent<CalendarListItemProps, CalendarListItemState> {
   static displayName = 'IGNORE';
 
   static propTypes = {

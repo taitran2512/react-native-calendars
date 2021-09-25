@@ -31,7 +31,7 @@ export interface BasicDayProps {
   accessibilityLabel: string;
 }
 
-export default class BasicDay extends Component<BasicDayProps> {
+export default class BasicDay extends React.PureComponent<BasicDayProps> {
   static displayName = 'IGNORE';
 
   static propTypes = {

@@ -25,7 +25,7 @@ interface DayProps extends Omit<BasicDayProps, 'date'> {
   dayComponent?: any;
 }
 
-export default class Day extends Component<DayProps> {
+export default class Day extends React.PureComponent<DayProps> {
   static displayName = 'IGNORE';
 
   static propTypes = {

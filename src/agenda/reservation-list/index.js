@@ -11,7 +11,7 @@ import {parseDate, toMarkingFormat} from '../../interface';
 import styleConstructor from './style';
 import Reservation from './reservation';
 
-class ReservationList extends Component {
+class ReservationList extends React.PureComponent {
   static displayName = 'IGNORE';
 
   static propTypes = {

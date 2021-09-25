@@ -24,7 +24,7 @@ const applyAndroidRtlFix = commons.isAndroid && commons.isRTL;
  * @note: Should be wrapped with 'CalendarProvider'
  * @example: https://github.com/wix/react-native-calendars/blob/master/example/src/screens/expandableCalendar.js
  */
-class WeekCalendar extends Component {
+class WeekCalendar extends React.PureComponent {
   static displayName = 'WeekCalendar';
 
   static propTypes = {

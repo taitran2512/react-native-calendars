@@ -72,7 +72,7 @@ type CalendarListState = {
  * @example: https://github.com/wix/react-native-calendars/blob/master/example/src/screens/calendarsList.js
  * @gif: https://github.com/wix/react-native-calendars/blob/master/demo/calendar-list.gif
  */
-class CalendarList extends Component<CalendarListProps, CalendarListState> {
+class CalendarList extends React.PureComponent<CalendarListProps, CalendarListState> {
   static displayName = 'CalendarList';
 
   static propTypes = {

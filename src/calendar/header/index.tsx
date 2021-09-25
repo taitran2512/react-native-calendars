@@ -56,7 +56,7 @@ export interface CalendarHeaderProps {
   importantForAccessibility?: 'auto' | 'yes' | 'no' | 'no-hide-descendants';
 }
 
-class CalendarHeader extends Component<CalendarHeaderProps> {
+class CalendarHeader extends React.PureComponent<CalendarHeaderProps> {
   static displayName = 'IGNORE';
 
   static propTypes = {

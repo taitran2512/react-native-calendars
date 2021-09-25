@@ -25,7 +25,7 @@ const KNOB_HEIGHT = 24;
  * @example: https://github.com/wix/react-native-calendars/blob/master/example/src/screens/agenda.js
  * @gif: https://github.com/wix/react-native-calendars/blob/master/demo/agenda.gif
  */
-export default class AgendaView extends Component {
+export default class AgendaView extends React.PureComponent {
   static displayName = 'Agenda';
 
   static propTypes = {

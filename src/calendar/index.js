@@ -23,7 +23,7 @@ import Day from './day/index';
  * @example: https://github.com/wix/react-native-calendars/blob/master/example/src/screens/calendars.js
  * @gif: https://github.com/wix/react-native-calendars/blob/master/demo/calendar.gif
  */
-class Calendar extends Component {
+class Calendar extends React.PureComponent {
   static displayName = 'Calendar';
 
   static propTypes = {
