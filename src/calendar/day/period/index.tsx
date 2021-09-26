@@ -22,7 +22,7 @@ interface PeriodDayProps {
   testID?: string;
 }
 
-export default class PeriodDay extends React.PureComponent<PeriodDayProps> {
+export default class PeriodDay extends React.Component<PeriodDayProps> {
   static displayName = 'IGNORE';
 
   static propTypes = {

@@ -48,12 +48,12 @@ class CalendarListItem extends React.PureComponent<CalendarListItemProps, Calend
     this.style = styleConstructor(props.theme);
   }
 
-  shouldComponentUpdate(nextProps: CalendarListItemProps) {
-    const r1 = this.props.item;
-    const r2 = nextProps.item;
+//   shouldComponentUpdate(nextProps: CalendarListItemProps) {
+//     const r1 = this.props.item;
+//     const r2 = nextProps.item;
 
-    return r1.toString('yyyy MM') !== r2.toString('yyyy MM') || !!(r2.propBump && r2.propBump !== r1.propBump);
-  }
+//     return r1.toString('yyyy MM') !== r2.toString('yyyy MM') || !!(r2.propBump && r2.propBump !== r1.propBump);
+//   }
 
   onPressArrowLeft = (_: any, month: any) => {
     const {onPressArrowLeft, scrollToMonth} = this.props;

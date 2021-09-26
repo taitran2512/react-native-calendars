@@ -47,7 +47,7 @@ export interface MarkingProps extends DotProps {
   accessibilityLabel?: string;
 }
 
-export default class Marking extends React.PureComponent<MarkingProps> {
+export default class Marking extends React.Component<MarkingProps> {
   static displayName = 'IGNORE';
 
   static markingTypes = MarkingTypes;
